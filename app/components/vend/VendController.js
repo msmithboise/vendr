@@ -16,7 +16,7 @@ function drawItems() {
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
     template += `
-            <div class="food-item" onclick>
+            <div class="food-item" onclick="app.controllers.vendController.vend('${item.id}')">
               <img src="${item.img}" alt = "">
               <h3> ${item.price}</h3> 
             </div>
@@ -38,6 +38,14 @@ class VendController {
 
   }
 
+
+  vend(foodId){
+    let obj = vendService.vend(foodId)
+    if(obj.img){
+      document.getElementById("vended").setAttribute('src', obj.img)
+      drawTotal(obj.total)
+    }
+  }
 
 
   //used to send money to service

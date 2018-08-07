@@ -24,6 +24,10 @@ class VendService {
     }
     return vm.transactionTotal.toFixed(2)
   }
+  vend(foodId){
+    let obj = vm.vend(foodId)
+    return obj
+  }
 
 }
 

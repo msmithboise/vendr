@@ -29,6 +29,9 @@ class VendingMachine {
     //validate coin
     //  increase total 
     //return total
+  
+
+
   }
   vend(foodId) {
     //find item
@@ -37,17 +40,32 @@ class VendingMachine {
     //  transactionTotal -= item.price
     //  machineTotal += item.price
     //return item.img
-items = " "
 
-    for (let i = 0; i < this.foodItems.length; i++) {
-      let currentItem = this.foodItems[i];
-       if (currentItem.id == foodId){
-        
-         return currentItem.img
-       }  
+    let item = this.foodItems.find(currentItem => currentItem.id == foodId)
+    if(item.quantity && this.transactionTotal > item.price){
+      item.quantity--
+      this.transactionTotal -= item.price
+      this.machineTotal += item.price
+      return { 
+        img: item.img, 
+        total: this.transactionTotal 
+      }
+    }
+    
+
+    // for (let i = 0; i < this.foodItems.length; i++) { // iterate through array of items
+    //   let currentItem = this.foodItems[i]; // declaring a variable that holds info for all items
+    //    if (currentItem.id == foodId){ // now what do we do with new variable?  conditional, if id of any of the items = foodId
+    //      if (currentItem.quantity > 0) // and the quanity is over 0, so that the item is available
+    //      if (this.transactionTotal -= currentItem.price) // transactionTotal is the amount of money user puts in machine
+    //      if (this.machineTotal += currentItem.price) // machineTotal is how much money is already in the machine
+
+    //      return currentItem.img
+    //    }  else
+    //    return "Out of order!"
 
       
-    }
+    
 
 
 
