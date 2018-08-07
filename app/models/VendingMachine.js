@@ -37,6 +37,23 @@ class VendingMachine {
     //  transactionTotal -= item.price
     //  machineTotal += item.price
     //return item.img
+items = " "
+
+    for (let i = 0; i < this.foodItems.length; i++) {
+      let currentItem = this.foodItems[i];
+       if (currentItem.id == foodId){
+        
+         return currentItem.img
+       }  
+
+      
+    }
+
+
+
+
+
+
   }
   giveChange() {
     //transactionTotal = 0
