@@ -1,4 +1,5 @@
 import VendService from "./VendService.js";
+import VendingMachine from "../../models/VendingMachine.js";
 
 //PRIVATE PARTS
 
@@ -41,7 +42,7 @@ class VendController {
 
   vend(foodId){
     let obj = vendService.vend(foodId)
-    if(obj.img){
+    if(obj){
       document.getElementById("vended").setAttribute('src', obj.img)
       drawTotal(obj.total)
     }
@@ -55,6 +56,11 @@ class VendController {
     console.log('returned to controller: ', total)
     drawTotal(total)
   }
+
+giveChange(){
+  vendService.giveChange()
+  drawTotal("0.00")
+}
 
 
 }

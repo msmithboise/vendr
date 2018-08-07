@@ -29,7 +29,13 @@ class VendService {
     return obj
   }
 
+  giveChange(){
+    vm.giveChange()
+  }
+
 }
+
+
 
 
 export default VendService

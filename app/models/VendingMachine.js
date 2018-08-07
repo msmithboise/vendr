@@ -42,14 +42,13 @@ class VendingMachine {
     //return item.img
 
     let item = this.foodItems.find(currentItem => currentItem.id == foodId)
-    if(item.quantity && this.transactionTotal > item.price){
+    if(item.quantity && this.transactionTotal >= item.price){
       item.quantity--
       this.transactionTotal -= item.price
       this.machineTotal += item.price
       return { 
         img: item.img, 
-        total: this.transactionTotal 
-      }
+        total: this.transactionTotal }
     }
     
 
@@ -75,6 +74,9 @@ class VendingMachine {
   }
   giveChange() {
     //transactionTotal = 0
+    this.transactionTotal = 0
+
+
   }
 
   getItems() {
