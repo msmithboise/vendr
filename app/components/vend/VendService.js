@@ -16,13 +16,9 @@ class VendService {
     return vm.getItems()
   }
   addMoney(type) {
-    console.log('service: ', type)
+   
     //confirm currency is acceptable
-    if (vm.acceptableCurrency[type]) {
-      //add to total
-      vm.transactionTotal += vm.acceptableCurrency[type]
-    }
-    return vm.transactionTotal.toFixed(2)
+    return vm.addMoney(type)
   }
   vend(foodId){
     let obj = vm.vend(foodId)

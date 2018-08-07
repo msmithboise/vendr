@@ -29,8 +29,10 @@ class VendingMachine {
     //validate coin
     //  increase total 
     //return total
-  
-
+  if (this.acceptableCurrency[coin]){
+    this.transactionTotal += this.acceptableCurrency[coin]
+  }
+return 'invalid coin'
 
   }
   vend(foodId) {
