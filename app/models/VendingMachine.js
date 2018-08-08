@@ -35,14 +35,27 @@ class VendingMachine {
 return 'invalid coin'
 
   }
+  //   //find item
+  //   //if transactionTotal >= item.price && item.quantity > 0
+  //   //  item.quantity --
+  //   //  transactionTotal -= item.price
+  //   //  machineTotal += item.price
+  //   //return item.img
+  
+//   vend(foodIndex){ // food id
+//     let item = this.foodItems[foodIndex]
+//     if (this.transactionTotal >= item.price && item.quantity > 0){
+//       item.quantity--
+//       this.transactionTotal -= item.price
+//       this.machineTotal += item.price
+//       return{ img: img,
+// Total: this.transactionTotal
+//     }
+//   }
+  
+  
+  
   vend(foodId) {
-    //find item
-    //if transactionTotal >= item.price && item.quantity > 0
-    //  item.quantity --
-    //  transactionTotal -= item.price
-    //  machineTotal += item.price
-    //return item.img
-
     let item = this.foodItems.find(currentItem => currentItem.id == foodId)
     if(item.quantity && this.transactionTotal >= item.price){
       item.quantity--
